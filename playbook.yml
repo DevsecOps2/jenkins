@@ -1,6 +1,6 @@
 ---
  - name: setup an httpd webserver
-   hosts: apache
+   hosts: rhel
    become_user: root
    become: true
    tasks:
