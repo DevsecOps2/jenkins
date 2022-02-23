@@ -1,0 +1,13 @@
+---
+ - name: setup an httpd webserver
+   hosts: apache
+   become_user: root
+   become: true
+   tasks:
+     - name: Install apache packages
+       apt: name=apache2 state=present
+       when: ansible_os_family == "Debian"
+
+     - name: Install apache packages
+       yum: name=httpd state=present
+       when: ansible_os_family == "RedHat"
